@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    height: inherit;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 55, 255);
+    color: white;
+    height: 100%;
+}
+
+.sidebar > div {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1rem 2rem 1rem 2rem;
+}
+

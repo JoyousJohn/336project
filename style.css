@@ -1,6 +1,11 @@
+html {
+    font-size: 62.5%;
+}
+
 body {
     margin: 0;
     height: 100vh;
+    background-color: rgb(215, 215, 215)
 }
 
 .content {
@@ -11,15 +16,84 @@ body {
 .sidebar {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 55, 255);
-    color: white;
+    justify-content: space-between;
     height: 100%;
+    background-color: rgb(93, 46, 164);
 }
 
-.sidebar > div {
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 1rem 2rem 1rem 2rem;
+.sidebar-logo {
+    font-family: Richela Kids;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 1rem;
 }
 
+.sidebar-top, .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: Montserrat;
+    font-size: 2rem;
+    text-align: left;
+}                                               
+
+.sidebar-item {
+    padding: 1.5rem 2.5rem;
+    transition: 200ms;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-item:not(.sidebar-selected):hover {
+    background-color: orange;
+}
+
+.sidebar-item:not(.sidebar-selected) {
+    cursor: pointer;
+}
+
+.sidebar-selected {
+    background-color: rgb(93, 49, 238);
+}
+
+.sidebar-item > i {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    height: fit-content;
+}
+
+.search-form {
+    border: 2px solid gray;
+    background-color: white;
+    color: gray;
+    transition: 300ms;
+}
+
+.search-form > i {
+    font-size: 2rem;
+    margin-left: 1.5rem;
+}
+
+.search-input {
+    border: none;
+    font-size: 2rem;
+    background-color: transparent;
+    padding: 1rem;
+    flex-grow: 1;
+    font-family: Montserrat;
+}
+
+.search-input::placeholder {
+    font-weight: 400;
+}
+
+.search-input:focus {
+    outline: none;
+}

@@ -8,12 +8,17 @@ body {
     background-color: rgb(215, 215, 215)
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 .content {
     display: flex;
     height: inherit;
 }
 
-.login-wrapper {
+.search-btn-wrapper {
     font-family: Montserrat;
     font-size: 2rem;
     background-color: rgb(93, 46, 164);
@@ -21,9 +26,14 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    border-radius: 2.5rem;
+    transition: 200ms;
+    cursor: pointer;
 }
 
-.login {
+.search-btn-wrapper:hover {
+    background-color: purple;
+}
+
+.search-btn {
     margin: auto 1.5rem;
 }

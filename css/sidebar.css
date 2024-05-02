@@ -31,7 +31,7 @@
 }
 
 .sidebar-item:not(.sidebar-selected):hover {
-    background-color: orange;
+    background-color: rgb(64, 0, 128);
 }
 
 .sidebar-item:not(.sidebar-selected) {
@@ -39,7 +39,7 @@
 }
 
 .sidebar-selected {
-    background-color: rgb(93, 49, 238);
+    background-color: rgb(155, 153, 255);
 }
 
 .sidebar-item > i {

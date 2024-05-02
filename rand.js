@@ -12,7 +12,7 @@ function generateRandomAuctions(n) {
             'bids': []
         };
 
-        const numBids = getRandomNumber(1, 5);
+        const numBids = getRandomNumber(1, 10);
         for (let j = 0; j < numBids; j++) {
             auction.bids.push({
                 'bidder': generateRandomName(),

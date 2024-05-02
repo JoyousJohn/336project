@@ -36,6 +36,8 @@ $(document).ready(function() {
         $thisAuction.find('.auction-title').text(auction.title)
         $thisAuction.find('.auction-price').text('$' + auction.winningBidPrice)
 
+        $thisAuction.find('.auction-bidders').text(auction.bids.length + ' bids')
+
         $('.auctions').append($thisAuction.removeClass('none'))
 
         l++;

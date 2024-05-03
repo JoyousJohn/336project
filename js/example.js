@@ -23,7 +23,7 @@ const amntOfSampleAuctions = 27
 
 $(document).ready(function() {
 
-    auctions = generateRandomAuctions(27)
+    auctions = generateRandomAuctions(42)
 
     let l = 0;
 

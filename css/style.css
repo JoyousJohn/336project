@@ -16,7 +16,7 @@ body {
 .search-btn-wrapper {
     font-family: Montserrat;
     font-size: 2rem;
-    background-color: rgb(93, 46, 164);
+    background-color: rgb(84, 4, 84);
     color: white;
     height: 100%;
     display: flex;
@@ -26,7 +26,7 @@ body {
 }
 
 .search-btn-wrapper:hover {
-    background-color: purple;
+    background-color: blue;
 }
 
 .search-btn {

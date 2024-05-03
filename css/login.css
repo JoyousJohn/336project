@@ -7,8 +7,8 @@
 }
 
 .login-header {
-    font-family: Montserrat;
-    font-size: 2.5rem;
+    font-family: 'IT Encore Sans Book', sans-serif;  
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -29,7 +29,7 @@ form {
 }
 
 input {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-left: 1rem;
 }
 
@@ -40,7 +40,7 @@ input::placeholder {
 .login-btn, .sign-up-btn {
     font-size: 3rem;
     font-family: Montserrat;
-    background-color: rgb(80, 48, 183);
+    background-color: rgb(84, 8, 84);
     color: white;
     padding: 0.5rem 0;
     text-align: center;

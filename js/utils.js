@@ -13,11 +13,13 @@ function updateSide() {
     // Show menu for logged in users
     if (isLoggedIn) {
         $('.sidebar-profile > .txt').text('Profile')
+        $('.navbar-bell').removeClass('none')
     }
 
     // If the user is not logged in only show the login menu
     else if (!isLoggedIn) {
         $('.sidebar-profile > .txt').text('Login')
+        $('.navbar-bell').addClass('none')
     }
 
 }
@@ -46,3 +48,9 @@ function getFakeUser() {
         'email': 'whatever@idc.com',
     }
 }
+
+// Set main content left margin since sidebar is fixed
+
+$(document).ready(function() {
+    $('.main').css('margin-left', $('.sidebar').width() + 'px') 
+})

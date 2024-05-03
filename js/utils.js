@@ -60,6 +60,6 @@ function getFakeUser() {
 
 // Set main content left margin since sidebar is fixed
 
-$(document).ready(function() {
-    $('.main').css('margin-left', $('.sidebar').width() + 'px') 
-})
+// $(document).ready(function() {
+//     $('.main').css('margin-left', $('.sidebar').width() + 'px') 
+// })

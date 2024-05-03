@@ -33,11 +33,86 @@
 
     </div>
 
-    <div class="main">
+    <div class="main flex flex-col w-full">
 
         <div class="profile-basics">
-            <div class="profile-username"></div>
-            <div class="profile-email"></div>
+            <div class="your-profile">YOUR PROFILE</div>
+            <div class="flex col-gap-2rem">
+                <div class="profile-username-wrap">
+                    <div class="profile-username"></div>
+                    <div class="profile-sub">USERNAME</div>
+                </div>
+                <div class="profile-email-wrap">
+                    <div class="profile-email"></div>
+                    <div class="profile-sub">EMAIL</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-advanced">
+            <div class="profile-auctions">
+                <div class="your-profile">YOUR LISTINGS</div>
+
+                <div class="listings-list">
+                    
+                    <div class="listing-item template-item">
+                        <div class="listing-img"></div>
+                        <div class="listing-info-wrap">
+                            <div class="listing-title">Template Listing Item</div>
+                            <div>
+                                <span class="listing-type">Active auction</span>
+                                <span class="listing-time-remaining"> XXH XXM remaining</span>
+                            </div>
+                            <div class="flex items-center col-gap-1rem">
+                                <span class="listing-price">$XX.XX </span>
+                                <span class="listing-bids">X bids</span>
+                            </div>
+                            <div class="listing-stats">Y views | Z favorites</div>
+                        </div>
+                    </div>
+
+                    <div class="listing-item new-listing">
+                        <div class="new-listing-plus">+</div>
+                        <div class="new-listing-text">CREATE NEW LISTING</div>
+                    </div>
+
+                    <!-- <div class="listing-item">
+                        <div class="listing-img"></div>
+                        <div class="listing-info-wrap">
+                            <div class="listing-title">Chinese Pokemon Water Bottle</div>
+                            <div>
+                                <span class="listing-type">Active auction</span>
+                                <span class="listing-time-remaining"> 2H 7M remaining</span>
+                            </div>
+                            <div class="flex items-center col-gap-1rem">
+                                <span class="listing-price">$4.78 </span>
+                                <span class="listing-bids">4 bids</span>
+                            </div>
+                            <div class="listing-stats">17 views | 3 favorites</div>
+                        </div>
+                    </div>
+
+                    <div class="listing-item">
+                        <div class="listing-img"></div>
+                        <div class="listing-info-wrap">
+                            <div class="listing-title">Generic Auction Placeholder</div>
+                            <div>
+                                <span class="listing-type">Active auction</span>
+                                <span class="listing-time-remaining"> 12H 18M remaining</span>
+                            </div>
+                            <div class="flex items-center col-gap-1rem">
+                                <span class="listing-price">$24.20 </span>
+                                <span class="listing-bids">31 bids</span>
+                            </div>
+                            <div class="listing-stats">4 views | 3 favorites</div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="profile-alerts">
+                <div class="your-profile">YOUR ALERTS</div>
+            </div>
         </div>
 
     </div>

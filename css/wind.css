@@ -8,4 +8,10 @@
 
 .items-center { align-items: center ;}
 
+.content-center {justify-content: center;}
+
 .flex-col { flex-direction: column; }
+
+.col-gap-1rem { column-gap: 1rem; }
+
+.col-gap-2rem { column-gap: 2rem; }

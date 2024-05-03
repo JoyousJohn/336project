@@ -36,8 +36,8 @@ function getIsLoggedIn() {
     if (urlParams.has('loggedIn')) {
         return urlParams.get('loggedIn') === 'true';
     } else {
-        // return true;
-        return false
+        return true;
+        // return false
     }    
 }
 

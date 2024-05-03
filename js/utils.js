@@ -26,10 +26,19 @@ function updateSide() {
 
 
 // Function that checks if the user is logged in and returns a boolean
+// First checks if a loggedIn parameter was set in the url (i.e. .../index.html?loggedIn=true)
 // Implement a get request to JSP here that checks session attribute
 function getIsLoggedIn() {
-    return true;
-    // return false
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    if (urlParams.has('loggedIn')) {
+        return urlParams.get('loggedIn') === 'true';
+    } else {
+        // return true;
+        return false
+    }    
 }
 
 // Helper function that updates isLoggedIn global var and visual elements without needing to call multiple functions manually

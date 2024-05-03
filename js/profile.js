@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-    // If the user is not logged in show the login/sign up menu
+    // If the user is not logged in then redirect to login.html
     if (!isLoggedIn) {
-        showLogin()
+        window.location.href = 'login.html';
     }
 
     // If the user is logged in, show their profile info

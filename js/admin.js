@@ -1,6 +1,12 @@
 $(document).ready(function() {
 
+    // If the user isn't an admin return them back to home page
+    if (!isAdmin()) {
+        window.location.href = 'index.html';
+    }
+
     const users = getFakeUsers()
+    // const users = getUsers() // Uncomment this once JSP endpoint is integrated
 
     for (let userKey in users) {
 
@@ -49,6 +55,26 @@ $(document).ready(function() {
 
 })
 
+// Implement JSP endpoint that checks if session username is "admin"
+function isAdmin() {
+
+    return true // For now, remove this line once JSP integrated
+
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'is_admin', // change this as you wish
+    //     success: function(response) {
+    //         return response.data === 'true';
+    //     },
+    //     error: function(xhr, status, error) {
+    //         console.error('Error getting users:', error);
+    //         return 'error'
+    //     }
+    // });
+
+}
+
+// Return all users from users table and their basic data via JSP endpoint
 function getUsers() {
 
     $.ajax({

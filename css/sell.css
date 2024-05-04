@@ -112,10 +112,14 @@ input::placeholder {
     padding-left: 2rem;
     padding-right: 2rem;
     transition: 111ms;
-    cursor: pointer;
     user-select: none;
 }
 
-.publish:hover {
+.publish:not(.publish-error):hover {
     background-color: rgb(150, 11, 150);
+    cursor: pointer;
+}
+
+.publish-error {
+    background-color: rgb(202, 59, 59);
 }

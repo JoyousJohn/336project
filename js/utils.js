@@ -57,3 +57,10 @@ function getFakeUser() {
         'email': 'whatever@idc.com',
     }
 }
+
+// Checks if an object has any empty values
+// Used when checking if any inputs were left unset when attempting to publish a new listing
+function hasEmptyValues(obj) {
+    const values = Object.values(obj);
+    return values.some(value => value === '' || value === null || value === undefined);
+}

@@ -67,7 +67,7 @@
 
                     <div class="auction-inputs none w-full flex flex-col row-gap-1rem">
                         <div class="flex items-center">
-                            $ <input type="text" class="sell-price w-full ml-1rem" placeholder="Start price">
+                            $ <input type="text" class="sell-auc-price w-full ml-1rem" placeholder="Start price">
                         </div>
                         <div class="flex items-center">
                             $ <input type="text" class="sell-reserve w-full ml-1rem" placeholder="Reserve (optional)">
@@ -76,13 +76,13 @@
 
                     <div class="bin-inputs none w-full flex flex-col row-gap-1rem">
                         <div class="flex items-center">
-                            $ <input type="text" class="sell-price w-full ml-1rem" placeholder="Price">
+                            $ <input type="text" class="sell-bin-price w-full ml-1rem" placeholder="Price">
                         </div>
                     </div>
 
                     <div class="flex items-center sell-end none">
                         <span style="white-space: nowrap;">End date:</span>
-                        <input type="datetime-local" class="w-full ml-1rem">
+                        <input type="datetime-local" class="sell-end-date w-full ml-1rem">
                     </div>
 
                 </form>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="flex content-center mt-3rem">
-            <div class="publish mont">PUBLISH</div>
+            <div class="publish mont" onclick="publish()">PUBLISH</div>
         </div>
 
     </div>

@@ -19,6 +19,17 @@ form {
     column-gap: 5rem;
 }
 
+.sell-category-select {
+    font-size: 2.5rem;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid darkgray;
+}
+
+option {
+    font-family: Montserrat, Arial;
+}
+
 .inputs, .sell-images {
     padding: 3rem;
 }
@@ -48,6 +59,7 @@ form {
 input {
     font-size: 2.5rem;
     padding: 1rem;
+    border: 1px solid darkgray;
 }
 
 input::placeholder {

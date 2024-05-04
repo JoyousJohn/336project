@@ -57,9 +57,3 @@ function getFakeUser() {
         'email': 'whatever@idc.com',
     }
 }
-
-// Set main content left margin since sidebar is fixed
-
-// $(document).ready(function() {
-//     $('.main').css('margin-left', $('.sidebar').width() + 'px') 
-// })

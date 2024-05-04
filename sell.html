@@ -45,9 +45,20 @@
 
                 <form>
 
-                    <input type="text" class="sell-title" name="search" placeholder="Title">
-                    <input type="text" class="sell-category" name="search" placeholder="Category">
-                    <input type="text" class="sell-description" name="search" placeholder="Description">
+                    <input type="text" class="sell-title" placeholder="Title">
+
+                    <select class="sell-category-select mont">
+                        <option value="" disabled selected>Shoe category</option>
+                        <option value="running">Running</option>
+                        <option value="hiking">Hiking</option>
+                        <option value="casual">Casual</option>
+                        <option value="formal">Formal</option>
+                        <option value="sneaker">Sneaker</option>
+                        <option value="boots">Boots</option>
+                        <option value="sandals">Sandals</option>
+                    </select>
+
+                    <input type="text" class="sell-description" placeholder="Description">
 
                     <div class="listing-type">
                         <div class="type-auction">Auction</div>
@@ -55,15 +66,24 @@
                     </div>
 
                     <div class="auction-inputs none w-full flex flex-col row-gap-1rem">
-                        <input type="text" class="sell-price" name="search" placeholder="Start price">
-                        <input type="text" class="sell-price" name="search" placeholder="Reserve (optional)">
+                        <div class="flex items-center">
+                            $ <input type="text" class="sell-price w-full ml-1rem" placeholder="Start price">
+                        </div>
+                        <div class="flex items-center">
+                            $ <input type="text" class="sell-reserve w-full ml-1rem" placeholder="Reserve (optional)">
+                        </div>
                     </div>
 
                     <div class="bin-inputs none w-full flex flex-col row-gap-1rem">
-                        <input type="text" class="sell-price" name="search" placeholder="Price">
+                        <div class="flex items-center">
+                            $ <input type="text" class="sell-price w-full ml-1rem" placeholder="Price">
+                        </div>
                     </div>
 
-                    <input type="text" class="sell-duration none" name="search" placeholder="Duration (in days)">
+                    <div class="flex items-center sell-end none">
+                        <span style="white-space: nowrap;">End date:</span>
+                        <input type="datetime-local" class="w-full ml-1rem">
+                    </div>
 
                 </form>
 

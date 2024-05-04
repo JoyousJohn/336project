@@ -1,0 +1,93 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/wind.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/sell.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/sell.js"></script>
+
+    <link href="https://fonts.cdnfonts.com/css/richela-kids" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/it-encore-sans" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9fec56898e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="content">
+
+    <div class="sidebar">
+
+        <div class="sidebar-top">
+            <div class="sidebar-logo">ShopBay</div>
+            <a href="index.html"><div class="sidebar-item sidebar-explore"><i class="fa-solid fa-house"></i>Explore</div></a>
+            <a href="profile.html"><div class="sidebar-item sidebar-login"><i class="fa-solid fa-user"></i><span class="txt">Profile</span></div></a>
+            <div class="sidebar-item sidebar-selected sidebar-sell"><i class="fa-solid fa-shop"></i>Sell</div></a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-item"><i class="fa-solid fa-circle-question"></i>Support</div>
+            <div class="sidebar-item"><i class="fa-solid fa-gear"></i>Settings</div>
+        </div>
+
+    </div>
+
+    <div class="main w-full">
+
+        <div class="sell-wrapper">
+
+            <div class="inputs mont">
+
+                <div class="mb-1rem">Enter item details</div>
+
+                <form>
+
+                    <input type="text" class="sell-title" name="search" placeholder="Title">
+                    <input type="text" class="sell-category" name="search" placeholder="Category">
+                    <input type="text" class="sell-description" name="search" placeholder="Description">
+
+                    <div class="listing-type">
+                        <div class="type-auction">Auction</div>
+                        <div class="type-bin">Buy it Now</div>
+                    </div>
+
+                    <div class="auction-inputs none w-full flex flex-col row-gap-1rem">
+                        <input type="text" class="sell-price" name="search" placeholder="Start price">
+                        <input type="text" class="sell-price" name="search" placeholder="Reserve (optional)">
+                    </div>
+
+                    <div class="bin-inputs none w-full flex flex-col row-gap-1rem">
+                        <input type="text" class="sell-price" name="search" placeholder="Price">
+                    </div>
+
+                    <input type="text" class="sell-duration none" name="search" placeholder="Duration (in days)">
+
+                </form>
+
+            </div>
+            
+            <div class="sell-images">
+
+                <div class="mont mb-1rem">Add up to 8 images</div>
+                <div class="sell-image-wrapper">
+                    <div class="sell-add-image">+</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="flex content-center mt-3rem">
+            <div class="publish mont">PUBLISH</div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

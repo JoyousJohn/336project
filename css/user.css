@@ -1,0 +1,31 @@
+.viewing-wrapper {
+    padding: 5rem;
+    width: 100%;
+}
+
+.view-names-info {
+    font-size: 3rem;
+}
+
+.viewing-username {
+    margin-right: 1rem;
+    font-weight: 500;
+}
+
+.viewing-name {
+    margin-left: 1rem;
+}
+
+.auctions-bids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+}
+
+.auctions, .bids {
+    font-size: 2.5rem;
+}
+
+.head {
+    text-decoration: underline;
+}

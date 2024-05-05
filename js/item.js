@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     $('.listing-condition').text(listingData['condition'])
     $('.listing-category').text(listingData['category'])
-    $('.listing-seller').text(listingData['seller']).attr('href', 'user.html/' + listingData['seller'])
+    $('.listing-seller').text(listingData['seller']).attr('href', 'user.html?user=' + listingData['seller'])
 
     for (let i = 0; i < listingData['imageCount']; i++) {
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
     listingData['bids'].forEach(bid => {
 
         const $bidElm = $(`
-        <a href="/user.html/${bid.bidder}">${bid.bidder}</a>
+        <a href="/user.html?user=${bid.bidder}">${bid.bidder}</a>
         <div>$${bid.maxBid}</div>
         <div>${bid.bidTimeString}</div>
         `)

@@ -63,9 +63,14 @@ $(document).ready(function() {
 
     // If error message telling user they didn't change anything is showing, clear it and reset the button to "Save changes"
     // no-changes just makes the background red and sets cursor to default
-    $('input').click(function() {
+    $('.manage-info input').click(function() {
         $('.save-changes').text("Save changes").removeClass('no-changes')
     })  
+
+    // Remove button message saying "Please fill in all fields!"
+    $('.create-user-form input').click(function() {
+        $('.create-user-confirm').text("Create New User").removeClass('create-user-error')
+    }) 
 
     // Show create new user input form when new user button is clicked
     $('.create-user').click(function() {
@@ -112,6 +117,63 @@ function getUsers() {
         },
         error: function(xhr, status, error) {
             console.error('Error getting users:', error);
+        }
+    });
+
+}
+
+// Function that runs when "Create New User" is pressed
+function createNewUser() {
+
+    const newUserUsername = $('.new-user-username').val()
+    const newUserName = $('.new-user-name').val()
+    const newUserEmail = $('.new-user-email').val()
+    const newUserPassword = $('.new-user-password').val()
+
+    let missingSomething = false
+
+    // If a field isn't filled in tell the user and return
+    if (newUserUsername === '' || newUserName === '' || newUserEmail === '' || newUserPassword === '') {
+        missingSomething = true
+        $('.create-user-confirm').text('Please fill in all fields!').addClass('create-user-error')
+        return
+    }
+
+    // Else send new account info to JSP
+    else {
+
+        const newUser = {
+            'username': newUserUsername,
+            'name': newUserName,
+            'email': newUserEmail,
+            'password': newUserPassword
+        }
+
+        postNewUser(newUser)
+
+    }
+   
+
+}
+
+// Send create new user via admin panel post request to server
+// This can be the same endpoint and logic as creating a new user on the profile/login/sign up page
+function postNewUser(newUser) {
+
+    $.ajax({
+        type: 'POST',
+        url: 'create_new_user', // change this as you wish
+        data: JSON.stringify(newUser),
+        contentType: 'application/json',
+
+        success: function(response) {
+            console.log('User created successfully');
+            // We can show some visual element that the user was created successfully sometime later
+        },
+        error: function(xhr, status, error) {
+            console.error('Error changing user data:', error);
+            // Show error if there was one (i.e. username already exists)
+            $('.create-user-confirm').text(status).addClass('create-user-error')
         }
     });
 

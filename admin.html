@@ -45,18 +45,18 @@
             <div class="create-user-wrapper">
                 <div class="create-user">Create new user +</div>
                 <form class="create-user-form none">
-                    <input type="text" placeholder="Username">
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Email">
-                    <input type="text" placeholder="Password">
+                    <input class="new-user-username" type="text" placeholder="Username">
+                    <input class="new-user-name" type="text" placeholder="Name">
+                    <input class="new-user-email" type="text" placeholder="Email">
+                    <input class="new-user-password" type="text" placeholder="Password">
                     <select>
                         <option>User</option>
                         <option>Admin</option>
                         <option>Rep</option>
                     </select>
                     <div class="create-user-confirm-wrap">
-                        <div class="create-user-confirm">
-                            Create User
+                        <div class="create-user-confirm" onclick="createNewUser()">
+                            Create New User
                         </div>
                     </div>
                 </form>

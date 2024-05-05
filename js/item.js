@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-
     const listingData = getExampleListingData()
+
+    const uuid = new URLSearchParams(window.location.search).get('uuid'); // SQL primary key for the auction data
+    // const listingData = getItemData(uuid) // uncomment this once getItemData() is implemented
+
 
     $('.listing-title').text(listingData['title'])
     $('.listing-description').text(listingData['description'])
@@ -24,6 +27,22 @@ $(document).ready(function() {
     }
 
 })
+
+// Get auction info from the auction table in SQL via JSP via uuid primary key
+function getItemData(uuid) {
+
+    $.ajax({
+        type: 'GET',
+        url: 'get_auction_info', // change this as you wish
+        success: function(response) {
+            return response.data;
+        },
+        error: function(xhr, status, error) {
+            console.error('Error getting auction data:', error);
+        }
+    });
+
+}
 
 function getExampleListingData() {
 

@@ -38,6 +38,10 @@ $(document).ready(function() {
 
         $thisAuction.find('.auction-bidders').text(auction.bids.length + ' bids')
 
+        const uuid = generateUUID() // get a random uuid for testing purposes
+
+        $thisAuction.attr('href', `item.html?uuid=${uuid}`)
+
         $('.auctions').append($thisAuction.removeClass('none'))
 
         l++;

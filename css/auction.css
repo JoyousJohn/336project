@@ -5,6 +5,10 @@
     gap: 2rem;
 }
 
+a {
+    text-decoration: none; /* Remove anchor underline */
+}
+
 .auction-img {
     /* background-image: url('https://picsum.photos/500/550'); */
     aspect-ratio: 1;
@@ -15,11 +19,13 @@
 .auction-title {
     font-family: Montserrat;
     font-size: 2.5rem;
+    color: black;
 }
 
 .auction-sub-info {
     font-family: Montserrat;
     font-size: 2rem;
+    color: black;
 }
 
 .auction-price {

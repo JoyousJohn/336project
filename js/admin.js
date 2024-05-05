@@ -129,11 +129,12 @@ function createNewUser() {
     const newUserName = $('.new-user-name').val()
     const newUserEmail = $('.new-user-email').val()
     const newUserPassword = $('.new-user-password').val()
+    const newUserRole = $('.new-user-role').val()
 
     let missingSomething = false
 
     // If a field isn't filled in tell the user and return
-    if (newUserUsername === '' || newUserName === '' || newUserEmail === '' || newUserPassword === '') {
+    if (newUserUsername === '' || newUserName === '' || newUserEmail === '' || newUserPassword === '' || newUserRole === '') {
         missingSomething = true
         $('.create-user-confirm').text('Please fill in all fields!').addClass('create-user-error')
         return
@@ -146,7 +147,8 @@ function createNewUser() {
             'username': newUserUsername,
             'name': newUserName,
             'email': newUserEmail,
-            'password': newUserPassword
+            'password': newUserPassword,
+            'role': newUserRole
         }
 
         postNewUser(newUser)

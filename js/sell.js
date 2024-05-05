@@ -84,6 +84,7 @@ function publish() {
     // Gather auction price info
     if (selectedAucType === 'auction') {
         newAuction['startPrice'] = $('.sell-auc-price').val(),
+        newAuction['increment'] = $('.sell-auc-increment').val(),
         newAuction['reserve'] = $('.sell-reserve').val()
     }
 

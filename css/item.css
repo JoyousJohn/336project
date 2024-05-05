@@ -33,6 +33,32 @@
     aspect-ratio: 1;
 }
 
+.set-alert {
+    border: 3px solid rgb(238, 134, 30);
+    color: rgb(238, 134, 30);
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: 200ms;
+    font-family: Montserrat;
+    font-size: 2rem;
+    width: min-content;
+    margin-top: 2rem;
+    white-space: nowrap;
+    font-weight: 500;
+    background-color: rgb(251, 251, 251);
+}
+
+.set-alert:hover {
+    background-color: rgb(238, 134, 30);
+    color: white;
+}
+
+.is-alert {
+    background-color: orange;
+    color: white;
+}
+
 .listing-right {
     margin-bottom: 8rem;
 }

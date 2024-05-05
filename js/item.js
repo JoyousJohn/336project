@@ -86,7 +86,28 @@ $(document).ready(function() {
 
     });
 
+    $('.set-alert').click(function() {
+        const hasAlertSet = $(this).hasClass('is-alert')
+
+        if (!hasAlertSet) {
+            $(this).addClass('is-alert').text('Alert Active')
+            updateAlert(true)
+        } else {
+            $(this).removeClass('is-alert').text('Create Alert')
+            updateAlert(false)
+        }
+
+    })
+
 })
+
+// Update the status for if the user has an alert for this item in the user data table
+// If alertActive is false you can just delete the uuid from that array
+function updateAlert(alertActive) {
+
+    
+     
+}
 
 // Get auction info from the auction table in SQL via JSP via uuid primary key
 function getItemData(uuid) {

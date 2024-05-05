@@ -33,6 +33,10 @@
     aspect-ratio: 1;
 }
 
+.listing-right {
+    margin-bottom: 8rem;
+}
+
 .listing-title {
     font-size: 3.5rem;
 }
@@ -99,6 +103,17 @@
     color: rgb(78, 50, 204);
 }
 
+.missing-inputs {
+    background-color: rgb(199, 43, 43);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
 .bid-wrapper {
     display: flex;
     font-size: 2rem;
@@ -121,6 +136,12 @@
 .place-bid {
     color: white;
     background-color: rgb(77, 77, 205);
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.place-bid:hover {
+    background-color: blue;
 }
 
 .listing-description {

@@ -1,8 +1,10 @@
+let uuid
+
 $(document).ready(function() {
 
     const listingData = getExampleListingData()
 
-    const uuid = new URLSearchParams(window.location.search).get('uuid'); // SQL primary key for the auction data
+    uuid = new URLSearchParams(window.location.search).get('uuid'); // SQL primary key for the auction data
     // const listingData = getItemData(uuid) // uncomment this once getItemData() is implemented
 
     $('.listing-title').text(listingData['title'])
@@ -58,6 +60,26 @@ $(document).ready(function() {
 
     })
 
+    $('input').on('input', function(event) {
+        let currentValue = $(this).val();
+    
+        if (!currentValue.startsWith('$')) {
+            currentValue = '$' + currentValue;
+        }
+    
+        const numericRegex = /^\$?\d*\.?\d{0,2}$/;
+        if (numericRegex.test(currentValue)) {
+            $(this).val(currentValue);
+        } else {
+            const prevValue = $(this).data('prevValue') || '';
+            $(this).val(prevValue);
+        }
+        $(this).data('prevValue', $(this).val());
+
+        $('.missing-inputs').addClass('none')
+
+    });
+
 })
 
 // Get auction info from the auction table in SQL via JSP via uuid primary key
@@ -84,6 +106,77 @@ function addAVew(uuid) {
         url: 'add_view', // change this as you wish
         data: JSON.stringify(uuid),
         contentType: 'application/json',
+    });
+
+}
+
+function placeBid() {
+
+    const bidAmount = $('.bid-price-input').val()
+
+    // If secret bidding was enabled
+    if (!$('.secret-bidding-wrapper').hasClass('none')) {
+        const bidLimit = $('.secret-upper-limit').val();
+        const bidIncrement = $('.secret-increment').val();
+
+        // Confirm inputs aren't blank
+        if (bidAmount === '' || bidAmount === '$' || bidLimit === '' || bidLimit === '$' || bidIncrement === '' || bidIncrement === '$') {
+            $('.missing-inputs').removeClass('none')
+            return
+        }
+
+        const bidInfo = {
+            'bidAmount': bidAmount,
+            'bidType': 'auto',
+            'bidLimit': bidLimit,
+            'bidIncrement': bidIncrement
+        }
+
+        postBid(bidInfo)
+
+    }
+
+    // Normal bidding
+    else {
+
+        // Confirm inputs aren't blank
+        if (bidAmount === '' || bidAmount === '$') {
+            $('.missing-inputs').removeClass('none')
+            return
+        }
+
+        const bidInfo = {
+            'bidAmount': bidAmount,
+            'bidType': 'manual',
+        }
+
+        postBid(bidInfo)
+
+    }
+
+}
+
+// Make a post request to some endpoint to add the new bid!
+// bidInfo is guaranteed to have 3 keys: 'bidAmount', 'bidType', and the 'uuid' of the current item
+// bidType is either "auto" or "manual"
+// if bidType is auto (in the case of secret bidding), the keys bidLimit and bidIncrement will also be set
+// Add the bid to the bids attribute of the item in the auction table with uuid primary key!
+function postBid(bidInfo) {
+
+    bidInfo['uuid'] = uuid
+
+    $.ajax({
+        type: 'POST',
+        url: 'post_bid', // change this as you wish
+        data: JSON.stringify(bidInfo),
+        contentType: 'application/json',
+        success: function(response) {
+            // Eventually do visual stuff to show the user their bid was made
+        },
+        // An error could occur if the auction has ended
+        error: function(error) {
+            // Tell the user there was an error
+        }
     });
 
 }

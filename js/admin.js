@@ -48,7 +48,7 @@ $(document).ready(function() {
         $(`div[username="${name}"]`).addClass('managing-user')
 
         $('.manage-col-selected').removeClass('manage-col-selected')
-        $('.manage-info-wrap, .manage-danger-wrap').hide(); // Hide all wrapper
+        $('.manage-info-wrap, .manage-danger-wrap').hide(); // Hide all wrappers
         $('.manage-info-wrap').show();
         $('.manage-account-info').addClass('manage-col-selected')
         
@@ -153,25 +153,6 @@ function deleteUser(username) {
             $('.delete-user-btn').text('Error deleting user: ' +  status)
         }
     });
-
-}
-
-// Implement JSP endpoint that checks if session username is "admin"
-function isAdmin() {
-
-    return true // For now, remove this line once JSP integrated
-
-    // $.ajax({
-    //     type: 'GET',
-    //     url: 'is_admin', // change this as you wish
-    //     success: function(response) {
-    //         return response.data === 'true';
-    //     },
-    //     error: function(xhr, status, error) {
-    //         console.error('Error getting users:', error);
-    //         return 'error'
-    //     }
-    // });
 
 }
 

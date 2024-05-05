@@ -22,6 +22,10 @@ function updateSide() {
         $('.navbar-bell').addClass('none')
     }
 
+    if (!isAdmin()) {
+        $('.sidebar-admin').remove();
+    }
+
 }
 
 
@@ -75,3 +79,23 @@ function generateUUID() {
   
     return uuid;
 }  
+
+
+// Implement JSP endpoint that checks if session username is "admin"
+function isAdmin() {
+
+    return true // For now, remove this line once JSP integrated
+
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'is_admin', // change this as you wish
+    //     success: function(response) {
+    //         return response.data === 'true';
+    //     },
+    //     error: function(xhr, status, error) {
+    //         console.error('Error getting users:', error);
+    //         return 'error'
+    //     }
+    // });
+
+}

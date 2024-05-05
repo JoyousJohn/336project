@@ -74,6 +74,10 @@
     background-color: rgb(187, 59, 59);
 }
 
+.create-user-error:hover {
+    background-color: rgb(187, 59, 59);
+}
+
 .user-list-wrapper {
     font-size: 2rem;
 }

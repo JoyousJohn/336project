@@ -1,0 +1,95 @@
+.listing-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2fr;
+    column-gap: 5rem;
+    margin: 8rem;
+}
+
+.main-image {
+    background-image: url('https://picsum.photos/500/550');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1;
+    border-radius: 0.5rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.img-gallery {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    margin-top: 1rem;
+    column-gap: 1rem;
+}
+
+.gallery-img {
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    border-radius: 1rem;
+    width: 8rem;
+    height: 8rem;
+    aspect-ratio: 1;
+}
+
+.listing-title {
+    font-size: 3.5rem;
+}
+
+.winning-price {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.bids-count {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.ends-in {
+    font-size: 2rem;
+    color: rgb(100, 100, 100);
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+.listing-condition-wrap {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.listing-condition {
+    font-weight: bold;
+}
+
+.bid-wrapper {
+    display: flex;
+    font-size: 2rem;
+}
+
+.bid-wrapper > * {
+    border-radius: 0.5rem;
+}
+
+.bid-price-input {
+    font-size: 2rem;
+    width: 12rem;
+    border: 1px solid gray;
+}
+
+.bid-price-input::placeholder {
+    font-family: Montserrat;
+}  
+
+.place-bid {
+    color: white;
+    background-color: rgb(77, 77, 205);
+}
+
+.listing-description {
+    margin-top: 4rem;
+    font-size: 2rem;
+}

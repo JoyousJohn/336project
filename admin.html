@@ -78,9 +78,10 @@
                 <div class="user-management-example">
     
                     <div class="manage-columns flex col-gap-1rem">
-                        <div class="manage-col-selected">Account Info</div> |
+                        <div class="manage-account-info manage-col-selected" managing="manage-info">Account Info</div> |
                         <div>Bids</div> |
-                        <div>Auctions</div>
+                        <div>Auctions</div> |
+                        <div class="manage-danger" managing="manage-danger">Danger</div>
                     </div>
     
                     <div class="manage-info-wrap flex flex-col items-center">
@@ -131,6 +132,13 @@
                         
                     </div>
     
+                    <div class="manage-danger-wrap none">
+
+                        <div class="delete-user-btn">Delete User</div>
+                        <div class="no-undone none">Warning: This can't be undone!</div>
+
+                    </div>
+                     
                 </div>
     
             </div>

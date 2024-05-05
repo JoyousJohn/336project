@@ -128,6 +128,8 @@
     background-color: rgb(126, 97, 213);
 }
 
+/* ACCOUNT INFO ZONE */
+
 .user-management-example {
     grid-column: span 3;
 }
@@ -204,4 +206,36 @@ select, option {
 .no-changes {
     background-color: rgb(206, 62, 62);
     cursor: default;
+}
+
+/* DANGER ZONE */
+
+.delete-user-btn {
+    background-color: rgb(197, 58, 58);
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: min-content;
+    white-space: nowrap;
+    transition: 200ms;
+    cursor: hover;
+    cursor: pointer;
+}
+
+.delete-user-btn:hover {
+    background-color: rgb(229, 61, 61);
+}
+
+.delete-confirming {
+    background-color: rgb(200, 13, 13);
+}
+
+.delete-confirming:hover {
+    background-color: red;
+}
+
+.no-undone {
+    color: rgb(238, 26, 26);
+    margin-top: 1rem;
+    margin-left: 1rem;
 }

@@ -40,10 +40,18 @@ $(document).ready(function() {
     // Show user management options when a user is clicked
     $('.user-list > div:not(.list-head)').click(function() {
 
-        $('.managing-user').removeClass('managing-user')
         const name = $(this).attr('username')
+        if (selectedUser && name === selectedUser.username) return
+
+        $('.managing-user').removeClass('managing-user')
         selectedUser = users[name]
         $(`div[username="${name}"]`).addClass('managing-user')
+
+        $('.manage-col-selected').removeClass('manage-col-selected')
+        $('.manage-info-wrap, .manage-danger-wrap').hide(); // Hide all wrapper
+        $('.manage-info-wrap').show();
+        $('.manage-account-info').addClass('manage-col-selected')
+        
         $('.user-management-example').hide().insertAfter($(`div[username="${name}"]`).last()).slideDown();
 
         // Fill in input placeholders
@@ -56,6 +64,10 @@ $(document).ready(function() {
         // If error message telling user they didn't change anything is showing, clear it and reset the button to "Save changes"
         // no-changes just makes the background red and sets cursor to default
         $('.save-changes').text("Save changes").removeClass('no-changes')
+
+        // Remove any delete confirmation from past users being deleted
+        $('.delete-user-btn').removeClass('delete-confirming').css('cursor', 'pointer').text('Delete user')
+        $('.no-undone').hide();
 
     })
 
@@ -85,7 +97,64 @@ $(document).ready(function() {
 
     })
 
+    $('.manage-columns > div').click(function() {
+   
+        if ($(this).hasClass('manage-col-selected')) return;
+
+        $('.manage-col-selected').removeClass('manage-col-selected')
+        $(this).addClass('manage-col-selected')
+
+        $('.manage-info-wrap, .manage-danger-wrap').hide(); // Hide all wrapper
+
+        const managing = $(this).attr('managing')
+        console.log(managing)
+        $(`.${managing}-wrap`).show().removeClass('none');
+
+    })
+
+    $('.delete-user-btn').click(function() {
+
+        const isConfirming = $(this).hasClass('delete-confirming') // require a 2nd confirmation 
+
+        // Ask admin/rep to confirm first
+        if (!isConfirming) {
+           $(this).text('Confirm Deletion').addClass('delete-confirming')
+           $('.no-undone').removeClass('none').hide().fadeIn('fast');
+           return
+        }
+
+        // Actually delete the user
+        else {
+            $(this).text('Deleting user...').css('cursor', 'default')
+            deleteUser(selectedUser.username)
+        }
+
+    })
+
 })
+
+// Delete this user from SQL via POST request.
+function deleteUser(username) {
+
+    $.ajax({
+        type: 'POST',
+        url: 'delete_user', // change this as you wish
+        data: JSON.stringify(username),
+        success: function(response) {
+            // alert("User successfully deleted!") // For now just show an alert, will add some absolute/fixed button later
+            $(`div[username="${username}"]`).remove();
+            $('.user-management-example').slideUp();
+
+        },
+
+        // If there was an error deleting the user, like another admin already deleting it and the username no longer existing
+        error: function(xhr, status, error) {
+            console.error('Error deleting user:', status);
+            $('.delete-user-btn').text('Error deleting user: ' +  status)
+        }
+    });
+
+}
 
 // Implement JSP endpoint that checks if session username is "admin"
 function isAdmin() {

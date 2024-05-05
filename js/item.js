@@ -59,13 +59,6 @@ $(document).ready(function() {
 
     $('.bid-price-input').val('')
 
-    $('.secret-bidding-word').click(function() {
-
-        $(this).hide();
-        $('.secret-bidding-wrapper').hide().removeClass('none').slideDown('fast').find('input').val('')
-
-    })
-
     $('input').on('input', function(event) {
         let currentValue = $(this).val();
     
@@ -141,52 +134,22 @@ function placeBid() {
 
     const bidAmount = $('.bid-price-input').val()
 
-    // If secret bidding was enabled
-    if (!$('.secret-bidding-wrapper').hasClass('none')) {
-        const bidLimit = $('.secret-upper-limit').val();
-        const bidIncrement = $('.secret-increment').val();
-
-        // Confirm inputs aren't blank
-        if (bidAmount === '' || bidAmount === '$' || bidLimit === '' || bidLimit === '$' || bidIncrement === '' || bidIncrement === '$') {
-            $('.missing-inputs').removeClass('none')
-            return
-        }
-
-        const bidInfo = {
-            'bidAmount': bidAmount,
-            'bidType': 'auto',
-            'bidLimit': bidLimit,
-            'bidIncrement': bidIncrement
-        }
-
-        postBid(bidInfo)
-
+    // Confirm inputs aren't blank
+    if (bidAmount === '' || bidAmount === '$') {
+        $('.missing-inputs').removeClass('none')
+        return
     }
 
-    // Normal bidding
-    else {
-
-        // Confirm inputs aren't blank
-        if (bidAmount === '' || bidAmount === '$') {
-            $('.missing-inputs').removeClass('none')
-            return
-        }
-
-        const bidInfo = {
-            'bidAmount': bidAmount,
-            'bidType': 'manual',
-        }
-
-        postBid(bidInfo)
-
+    const bidInfo = {
+        'bidAmount': bidAmount,
     }
+
+    postBid(bidAmount)
 
 }
 
 // Make a post request to some endpoint to add the new bid!
-// bidInfo is guaranteed to have 3 keys: 'bidAmount', 'bidType', and the 'uuid' of the current item
-// bidType is either "auto" or "manual"
-// if bidType is auto (in the case of secret bidding), the keys bidLimit and bidIncrement will also be set
+// bidInfo is guaranteed to have 2 keys: 'bidAmount' and the 'uuid' of the current item
 // Add the bid to the bids attribute of the item in the auction table with uuid primary key!
 function postBid(bidInfo) {
 

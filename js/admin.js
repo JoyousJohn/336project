@@ -67,6 +67,16 @@ $(document).ready(function() {
         $('.save-changes').text("Save changes").removeClass('no-changes')
     })  
 
+    // Show create new user input form when new user button is clicked
+    $('.create-user').click(function() {
+
+        if ($('.create-user-form').is(':visible')) return
+
+        $(this).addClass('create-user-expanded')
+        $('.create-user-form').removeClass('none').hide().slideDown();
+
+    })
+
 })
 
 // Implement JSP endpoint that checks if session username is "admin"

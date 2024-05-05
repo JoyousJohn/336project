@@ -5,7 +5,6 @@ $(document).ready(function() {
     const uuid = new URLSearchParams(window.location.search).get('uuid'); // SQL primary key for the auction data
     // const listingData = getItemData(uuid) // uncomment this once getItemData() is implemented
 
-
     $('.listing-title').text(listingData['title'])
     $('.listing-description').text(listingData['description'])
 
@@ -16,6 +15,7 @@ $(document).ready(function() {
 
     $('.listing-condition').text(listingData['condition'])
     $('.listing-category').text(listingData['category'])
+    $('.listing-seller').text(listingData['seller']).attr('href', 'user.html/' + listingData['seller'])
 
     for (let i = 0; i < listingData['imageCount']; i++) {
 
@@ -48,6 +48,15 @@ $(document).ready(function() {
     $('.bid-breakdown').append($startPriceElm)
 
     addAVew()
+
+    $('.bid-price-input').val('')
+
+    $('.secret-bidding-word').click(function() {
+
+        $(this).hide();
+        $('.secret-bidding-wrapper').hide().removeClass('none').slideDown('fast').find('input').val('')
+
+    })
 
 })
 
@@ -90,6 +99,7 @@ function getExampleListingData() {
         'category': 'Running',
         'startPrice': 8.53,
         'startTime': 'May 2, 2024, 4:28 AM',
+        'seller': 'randomorange123',
 
         'description': `Step back in time with these classic vintage running shoes! These retro kicks boast timeless style and are perfect for sneakerheads and collectors alike. Crafted with quality materials and featuring a comfortable design, they're not just a fashion statement but a piece of history. Whether you're hitting the pavement or adding to your collection, these sneakers are sure to turn heads. Don't miss out on owning a piece of nostalgia - bid now!`,
 

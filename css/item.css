@@ -61,8 +61,42 @@
     font-weight: 500;
 }
 
-.listing-condition, .listing-category {
+.listing-condition, .listing-category, .listing-seller {
     font-weight: bold;
+}
+
+.secret-bidding-word {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: gray;
+    cursor: pointer;
+    transition: 200ms;
+    width: fit-content;
+    /* white-space: nowrap; */
+}
+
+.secret-bidding-wrapper > form {
+    display: flex;
+    align-items: center;
+}
+
+.secret-bidding-wrapper span {
+    display: block;
+    width: 12rem;
+}
+
+.secret-bidding-wrapper input {
+    width: 12rem;
+    margin-left: 1rem;
+}
+
+.secret-bidding-wrapper * {
+    font-size: 2rem;
+}
+
+.secret-bidding-word:hover {
+    color: rgb(78, 50, 204);
 }
 
 .bid-wrapper {

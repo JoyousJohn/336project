@@ -61,7 +61,7 @@
     font-weight: 500;
 }
 
-.listing-condition {
+.listing-condition, .listing-category {
     font-weight: bold;
 }
 

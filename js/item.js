@@ -15,6 +15,7 @@ $(document).ready(function() {
     $('.ends-in').text('Ends in ' + listingData['endsIn'])
 
     $('.listing-condition').text(listingData['condition'])
+    $('.listing-category').text(listingData['category'])
 
     for (let i = 0; i < listingData['imageCount']; i++) {
 
@@ -66,6 +67,7 @@ function getExampleListingData() {
         'endsIn': '12h 18m 4s',
         'condition': 'Used',
         'imageCount': 6,
+        'category': 'Running',
 
         'description': `Step back in time with these classic vintage running shoes! These retro kicks boast timeless style and are perfect for sneakerheads and collectors alike. Crafted with quality materials and featuring a comfortable design, they're not just a fashion statement but a piece of history. Whether you're hitting the pavement or adding to your collection, these sneakers are sure to turn heads. Don't miss out on owning a piece of nostalgia - bid now!`,
 

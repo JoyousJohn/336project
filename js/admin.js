@@ -70,7 +70,10 @@ $(document).ready(function() {
     // Show create new user input form when new user button is clicked
     $('.create-user').click(function() {
 
-        if ($('.create-user-form').is(':visible')) return
+        if ($('.create-user-form').is(':visible')) {
+            $('.create-user-form').slideUp();
+            return
+        }
 
         $(this).addClass('create-user-expanded')
         $('.create-user-form').removeClass('none').hide().slideDown();

@@ -26,6 +26,8 @@ $(document).ready(function() {
 
     }
 
+    addAVew()
+
 })
 
 // Get auction info from the auction table in SQL via JSP via uuid primary key
@@ -40,6 +42,18 @@ function getItemData(uuid) {
         error: function(xhr, status, error) {
             console.error('Error getting auction data:', error);
         }
+    });
+
+}
+
+// Add +1 view to the item in the auctions table with input uuid
+function addAVew(uuid) {
+
+    $.ajax({
+        type: 'POST',
+        url: 'add_view', // change this as you wish
+        data: JSON.stringify(uuid),
+        contentType: 'application/json',
     });
 
 }

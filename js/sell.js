@@ -61,7 +61,14 @@ function publish() {
 
     // If a listing type wasn't selected show an error and return
     if (!selectedAucType) {
-        $('.publish').text('Please select a listing type!!').addClass('publish-error')
+        $('.publish').text('Please select a listing type!').addClass('publish-error')
+        return;
+    }
+
+    // Ensure that the entered end datetime for the auction is at least 24 hours away from now
+    const isEndTimeValid = isDateAtLeast24HoursAway($('.sell-end-date').val())
+    if (!isEndTimeValid) {
+        $('.publish').text('Listings must end 24 hours+ away from now!').addClass('publish-error')
         return;
     }
 
@@ -98,6 +105,18 @@ function publish() {
     newAuction['uuid'] = generateUUID()
     publishAuction(newAuction)
     
+}
+
+// Used to ensure new listing end times must be a day away from now
+function isDateAtLeast24HoursAway(dateString) {
+    const now = new Date();
+    const [year, month, day, time] = dateString.split(/[-T]/);
+    const [hours, minutes] = time.split(':');
+  
+    const dateObj = new Date(year, month - 1, day, hours, minutes);
+  
+    const timeDiff = dateObj.getTime() - now.getTime();
+    return timeDiff >= 24 * 60 * 60 * 1000;
 }
 
 // Implent a publish_new_listing endpoint in JSP

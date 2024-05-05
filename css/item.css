@@ -93,3 +93,20 @@
     margin-top: 4rem;
     font-size: 2rem;
 }
+
+.bid-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, auto));
+    margin-top: 3rem;
+    width: fit-content;
+    column-gap: 4rem;
+    font-size: 2rem;
+}
+
+.bid-history-title {
+    grid-column: span 3;
+    font-size: 2rem;
+    border-bottom: 1px solid gray;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}

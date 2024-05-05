@@ -27,6 +27,26 @@ $(document).ready(function() {
 
     }
 
+    listingData['bids'].forEach(bid => {
+
+        const $bidElm = $(`
+        <a href="/user.html/${bid.bidder}">${bid.bidder}</a>
+        <div>$${bid.maxBid}</div>
+        <div>${bid.bidTimeString}</div>
+        `)
+
+        $('.bid-breakdown').append($bidElm)
+
+    })
+
+    const $startPriceElm = $(`
+        <div>Start Price</div>
+        <div>$${listingData.startPrice}</div>
+        <div>${listingData.startTime}</div>
+    `)
+
+    $('.bid-breakdown').append($startPriceElm)
+
     addAVew()
 
 })
@@ -68,17 +88,26 @@ function getExampleListingData() {
         'condition': 'Used',
         'imageCount': 6,
         'category': 'Running',
+        'startPrice': 8.53,
+        'startTime': 'May 2, 2024, 4:28 AM',
 
         'description': `Step back in time with these classic vintage running shoes! These retro kicks boast timeless style and are perfect for sneakerheads and collectors alike. Crafted with quality materials and featuring a comfortable design, they're not just a fashion statement but a piece of history. Whether you're hitting the pavement or adding to your collection, these sneakers are sure to turn heads. Don't miss out on owning a piece of nostalgia - bid now!`,
 
         'bids': [
             {
-                'bidder': 'username2',
-                'price': 24.73
+                'bidder': 'waterbottle',
+                'maxBid': 24.73,
+                'bidTimeString': 'May 4, 2024, 3:41 PM'
             },
             {
-                'bidder': 'username1',
-                'price': 10.00
+                'bidder': 'middleman',
+                'maxBid': 18.54,
+                'bidTimeString': 'May 4, 2024, 1:00 PM'
+            },
+            {
+                'bidder': 'tidepodfun',
+                'maxBid': 10.12,
+                'bidTimeString': 'May 3, 2024, 7:38 AM'
             }
         ]
     }

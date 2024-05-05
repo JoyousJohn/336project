@@ -46,6 +46,13 @@
     font-weight: bold;
 }
 
+.reserve-not-met {
+    display: none;
+    font-size: 2rem;
+    color: gray;
+    font-weight: 500;
+}
+
 .bids-count {
     font-size: 2rem;
     text-decoration: underline;

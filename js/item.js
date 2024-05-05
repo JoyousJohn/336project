@@ -12,6 +12,12 @@ $(document).ready(function() {
 
     $('.winning-price').text('US $' + listingData['winningPrice'])
 
+    console.log(listingData)
+
+    if (listingData['reserve'] > listingData['winningPrice']) {
+        $('.reserve-not-met').show();
+    }
+
     $('.bids-count').text(listingData['bids'].length + ' bids')
     $('.ends-in').text('Ends in ' + listingData['endsIn'])
 
@@ -186,6 +192,7 @@ function getExampleListingData() {
     return {
         'title': 'Vintage Running Shoe',
         'winningPrice': 24.73,
+        'reserve': 28.00,
         'endsIn': '12h 18m 4s',
         'condition': 'Used',
         'imageCount': 6,
